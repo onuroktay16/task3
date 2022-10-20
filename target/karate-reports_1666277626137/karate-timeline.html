@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/users\/request[5.1:69]","start":1666277496021,"end":1666277496192,"title":"src\/test\/java\/examples\/users\/request[5.1:69] 17:51:36.021-17:51:36.192 outline with csv - 250","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/users\/request[5.2:69]","start":1666277496201,"end":1666277496203,"title":"src\/test\/java\/examples\/users\/request[5.2:69] 17:51:36.201-17:51:36.203 outline with csv - 251","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/users\/request[5.3:69]","start":1666277496210,"end":1666277496212,"title":"src\/test\/java\/examples\/users\/request[5.3:69] 17:51:36.210-17:51:36.212 outline with csv - 252","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
